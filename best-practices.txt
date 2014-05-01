@@ -1,0 +1,67 @@
+/* PHP General Best Practices */
+
+Data:
+
+	Use PDO
+	Use prepared statements only with user submitted variables in query
+
+
+XSS:
+
+	Escape form data using HTMLSpecialChars
+
+
+Exceptions:
+
+	Use try/catch on any queries.
+
+
+Links:
+	
+	Pages: Root-relative "/" (BASE_URL)
+	Include files: Absolute server paths using $_SERVER['DOCUMENT_ROOT'] (ROOT_PATH)
+	Put trailing slashes in teh Constants?
+	Use BASE_URL, ROOT PATH
+
+Redirects:
+	404: Not found
+	301: Permanently Moved
+	500: Internal Server Error
+
+MYSQL
+	USERS:
+	Create users with permissions they need only.
+	Front end/admin users: CRUD only.
+	Possible other users: Read only, Schema Change
+
+
+	FUNCTIONS:
+		NUMERIC:
+		SUM(column_name)
+		AVG(column_name)
+		COUNT(column_name)
+		MIN(column_name)
+		MAX(column_name) 
+		IFNULL(CALC(),0)   // sets value to 0 if null
+
+		STRING:
+		LOWER(column_name)
+		UPPER(column_name)
+		LENGTH(column_name)
+		CONCAT(multiple arguments separated with comma)
+		SUBSTRING(string,startChar,totalChars)	// 1 based index
+
+		AGGREGATE:
+		GROUP BY	// use this for aliases or calucalations you have done within query - goes at the end of query
+
+	FOREIGN KEYS:
+	Use for relational table fields (normalization)
+	INDEXES:
+	Don't use too many
+
+	JOINS:
+	Think of it as 2 circles.
+	Outer
+	Left Outer
+	Right Outer
+	Inner
